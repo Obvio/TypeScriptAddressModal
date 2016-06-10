@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+ _    _   _
+| |_ (_) | |
+| ' \| | |_|
+|_||_|_| (_)
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TypeScript Addresses Modal</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<link rel="icon" href="./images/favicon.ico" sizes="32x32" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="./css/index.css" />
+</head>
+<body>
+
+<div class="ctx-app">
+	<div class="ctx-modal">
+		<div class="ctx-modal-header">
+			<div>
+				<h3>Addresses</h3>
+				<div class="ctx-ajax-indicator">ajax...</div>
+			</div>
+			<a href="#close" class="ctx-close-modal">&times;</a>
+		</div>
+		<div class="ctx-modal-body">
+			<div class="ctx-left-pane">
+				<ul class="ctx-address-list">
+					<li class="ctx-modal-0-entries">
+						<div class="ctx-modal-0-entries-message">
+							<img src="images/arrow.svg" alt="arrow image" />
+							<p>This Lead doesn't have any addresses yet, use this <strong>Search field</strong> and add one now.</p>
+						</div>
+					</li>
+				</ul>
+				<div class="ctx-location-indicator-wrapper">
+					<div class="ctx-location-indicator"></div>
+				</div>
+			</div>
+			<div class="ctx-right-pane">
+				<div id="ctx-map">
+					<div class="ctx-location-indicator"></div>
+				</div>
+				<div class="ctx-address-search">
+					<select name="address-type" id="ctx-address-type" class="ctx-select">
+						<option value="business" selected>Business</option>
+						<option value="mailing">Mailing</option>
+						<option value="other">Other</option>
+					</select>
+					<input id="autocomplete" placeholder="Start typing an address" type="text">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="./vendor/clipboard.js"></script>
+<script src="./vendor/jquery-2.2.3.js"></script>
+<script src="./bundle.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAm-bWz11cP2bLAEg7fNupqDfg7ii3N02E&signed_in=false&libraries=places&callback=gapiCallback"
+		async defer></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+/*Location indicator */
+.ctx-location-indicator{
+	position: relative;
+	transform: scale(1);
+	opacity: 1;
+	transition: all .2s linear;
+	transform-origin: 50%;
+}
+
+.hide-indicator{
+	transform: scale(0);
+	opacity: 0;
+}
+
+.ctx-location-indicator:before,
+.ctx-location-indicator:after{
+	position: absolute;
+	content: "";
+	color: mediumspringgreen;
+}
+
+.ctx-location-indicator:before{
+	z-index: 1;
+	width: 20px;
+	height: 20px;
+	border-radius: 100% 100% 100% 0;
+	box-shadow: 0 0 0 2px #DFDFDC;
+	animation: mapping 1s linear infinite;
+	transform: rotate(-46deg);
+}
+
+.ctx-location-indicator:after{
+	width: 30px;
+	height: 10px;
+	border-radius: 100%;
+	left: -5px;
+	background-color: rgba(223, 223, 220, 0.75);
+	top: 24px;
+	z-index: 0;
+	box-shadow: 0 0 0 0 rgba(0,0,0,0);
+	animation: mappingShadow 1s linear infinite;
+}
+
+@keyframes mapping{
+	0% {top: 0;}
+	50%{top: -5px;}
+	100% {top:0; }
+}
+
+@keyframes mappingShadow{
+	0% {}
+	50%{
+		transform: scale(.8);
+		box-shadow: 0 0 8px 0 rgba(0,0,0,.15);
+	}
+	100% {
+		transform: scale(1);
+		box-shadow: 0 0 2px 0 rgba(0,0,0,0);
+	}
+}

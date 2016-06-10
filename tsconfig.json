@@ -1,0 +1,10 @@
+{
+    "files": [
+         "src/main.ts"
+    ],
+    "compilerOptions": {
+        "noImplicitAny": false,
+        "target": "es6",
+        "suppressExcessPropertyErrors" : true
+    }
+}
